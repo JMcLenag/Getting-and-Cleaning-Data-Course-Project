@@ -56,3 +56,5 @@ names(meanSD)[3:ncol(meanSD)] <-
 
 meanSD2<-aggregate(. ~Subject + Activity, meanSD, mean)
 meanSD2<-meanSD2[order(meanSD2$Subject,meanSD2$Activity),]
+
+write.table(meanSD2,"TidyData.txt",row.names=F)
